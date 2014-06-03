@@ -1,0 +1,5 @@
+C:\Documents and Settings\User\My Documents\Visual Studio 2010\Projects\affiliates\affiliates\bin\affiliates.dll
+C:\Documents and Settings\User\My Documents\Visual Studio 2010\Projects\affiliates\affiliates\bin\affiliates.pdb
+C:\Documents and Settings\User\My Documents\Visual Studio 2010\Projects\affiliates\affiliates\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\User\My Documents\Visual Studio 2010\Projects\affiliates\affiliates\obj\Debug\affiliates.dll
+C:\Documents and Settings\User\My Documents\Visual Studio 2010\Projects\affiliates\affiliates\obj\Debug\affiliates.pdb
