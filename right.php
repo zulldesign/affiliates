@@ -1,1 +1,0 @@
-<!-- Right panel for ads -->
