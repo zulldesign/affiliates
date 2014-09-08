@@ -45,7 +45,7 @@
 
 	dim newpage as integer = request.querystring("newpage")
 	if newpage = 1 then
-	  	  Dim strSQL As String = "INSERT INTO tblPages(pagename, pagedata, homepage) VALUES('*new page description*', '<html>" & vbcrlf & "<head>" & vbcrlf & "<title>Untitled</title>" & vbcrlf & vbcrlf & "</head>" & vbcrlf & "<body>" & vbcrlf & vbcrlf & vbcrlf & "</body>" & vbcrlf & "</html>', 0);"
+	  	  Dim strSQL As String = "INSERT INTO tblPages(pagename, pagedata, homepage) VALUES('*Panduan Membina Laman Web*', '<html>" & vbcrlf & "<head>" & vbcrlf & "<title>Untitled</title>" & vbcrlf & vbcrlf & "</head>" & vbcrlf & "<body>" & vbcrlf & vbcrlf & vbcrlf & "</body>" & vbcrlf & "</html>', 0);"
 	  	  Dim iConn As New OleDbConnection("PROVIDER=Microsoft.Jet.OLEDB.4.0;DATA SOURCE=" & dbsource)
     	  Dim iCmd As New OleDbCommand(strSQL, iconn)
        	  iConn.Open()
