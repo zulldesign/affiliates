@@ -19,9 +19,9 @@ Dim queryvalue = Request.QueryString("id")
 if Page.IsPostBack then
 	If (IsNumeric(queryvalue)) then
 	  dim pagenameupdate as string = request.form("pagename")
-	  	pagenameupdate = replace(pagenameupdate,"'", "''")
+	  	pagenameupdate = replace("pagenameupdate")
 	  dim pagedataupdate as string = request.form("pagedata")
-	  	pagedataupdate = replace(pagedataupdate,"'", "''")
+	  	pagedataupdate = replace("pagedataupdate")
 	  
       Dim strSQL As String = "UPDATE tblPages SET pagedata = '" & pagedataupdate & "', pagename = '" & pagenameupdate & "' where ID = " & queryvalue & ";"
 	  Dim myConn As New OleDbConnection("PROVIDER=Microsoft.Jet.OLEDB.4.0;DATA SOURCE="/App_Data/acm2000.mdb"")
