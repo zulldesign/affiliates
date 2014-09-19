@@ -41,5 +41,3 @@ End if
 	End Sub
 </script>
 <%=mydata%>
-
-
