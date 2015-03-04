@@ -1,0 +1,1341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>AffiliateClick User Guide</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#ffffff" topmargin=0 marginheight=0 leftmargin=0 marginwidth=0 rightmargin=0>
+<table width="100%" border="0" bgcolor="#000000">
+  <tr>
+    <td height="66"> 
+      <div align="center"><font size="5" color="#66CCFF"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="6">COS<font color="#FFCC66">M</font>IC</font></b><font face="Verdana, Arial, Helvetica, sans-serif" size="6" color="#FFFFFF">PERL</font><font size="6" color="#FFFFFF"><font color="#6699CC" face="Verdana, Arial, Helvetica, sans-serif">&#153;</font></font></font></div>
+    </td>
+  </tr>
+</table>
+  
+<table width="100%" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+    <td> <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="4"><br>
+        AffiliateClick User Guide</font></p>
+
+      <p><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+        <font size="2">&copy; Copyright CosmicPerl.com (Lyle Hopkins) 2004. All 
+        rights reserved. No part of this or any of the attached documents shall 
+        be reproduced/stored in any way whatsoever without written permission 
+        from the Copyright holder. The Copyright holder holds no responsibility 
+        for errors or omissions. No liability is assumed in any way for damages 
+        resulting from the use of this document/program. <br>
+        </font></font><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
+        <br>
+        <strong>Sections in this files</strong> <br>
+        <br>
+        </font><font size="2" face="Verdana, Arial, Helvetica, sans-serif">1. 
+        Terms of Use <font color="#CC0000"><strong>IMPORTANT</strong></font><br>
+        2. Installation instructions<br>
+        3. Template editing<br>
+        4. Integration<br>
+        5. Testing the system is working<br>
+        6. Trouble shooting<br>
+        7. BUG report<br>
+        8. Getting rid of 'CosmicScripts.com' link<br>
+        9. Using the script</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>1. 
+        Terms of Use</strong><br>
+        <br>
+        AffiliateClick is the first completely free affiliate software product 
+        made available on the Internet. It may be free, but you must comply to 
+        certain terms for any use of this software, commercial or otherwise to 
+        be legal.<br>
+        A) You MUST keep the links back to cosmicperl.com, cosmicscripts.com and 
+        allaffiliatepro.com that appear on most of the pages. Removal or attempts 
+        to hide these links will result in your use of the software becoming illegal.<br>
+        B) You MUST NOT re-distribute any of this program in whole or in part 
+        for free or for payment without prior consent from CosmicPerl.com<br>
+        C) You MUST NOT use this software for any illegal sites, or activities.<br>
+        D) You MUST ensure your affiliate program is tracking properly before 
+        launching your affiliate program. Affiliates will not promote you if you 
+        are ripping them off.</font><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
+        <br>
+        <strong>2. Installation Instructions</strong></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Some files 
+        need to be opened and modified. To start with, make sure the first line 
+        of the file (if it's a script) points to the location of perl on your 
+        server. This is usually:<br>
+        </font><font size="2" face="Verdana, Arial, Helvetica, sans-serif">#!usr/bin/perl 
+        or #!usr/local/bin/perl. (Make sure you point to perl ver5+)<br>
+        By default this is #!usr/bin/perl if your path to perl is different you 
+        need to change this in each .cgi file.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> <strong>Setting 
+        the Configuration</strong><br>
+        All the configuration variables are in a file called 'variables.var'. 
+        You need to set these variables to your own values in order for the program 
+        to work properly. Be very careful when editing this file.</font></p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td bgcolor="#000000"><table width="100%" border="0" cellspacing="1" cellpadding="4">
+              <tr bgcolor="#D2EBFF"> 
+                <td colspan="2"> <div align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Program 
+                    Details</strong></font></div></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$programurl</font></td>
+                <td> <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+                    folder where you put the program files, such as:-<br>
+                    &quot;http://www.yourdomain.com/cgi-bin/affiliate&quot;</font></p></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$statsloginurl</font></td>
+                <td> <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+                    folder where you put the program files, such as:-<br>
+                    &quot;http://www.yourdomain.com/affiliate/login.html&quot;</font></p></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$companyname</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  should be your company name. This will appear as the from name 
+                  in outgoing emails. Example:-<br>
+                  &quot;Cosmic Networks Ltd&quot; </font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$recipient</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Your 
+                  e-mail address. This is the email address that all the programs 
+                  mailings will be from. Example:-<br>
+                  'webmaster@cosmicperl.com' </font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$mailprog</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Change 
+                  this to your sendmail path on Unix systems or your SMTP server 
+                  on Win32 systems. Example:-<br>
+                  '/usr/lib/sendmail' or 'mail.cosmicperl.com'</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$site1 
+                  to $site5</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+                  website(s) you are advertising. This could be just 1 or 5 different 
+                  sites. Example:-<br>
+                  &quot;http://www.cosmicperl.com&quot; </font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$currency</font></td>
+                <td> <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Your 
+                    local currency symbol to use in the program. Example:-<br>
+                    '$' or '&pound;'</font></p></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$commission</font></td>
+                <td> <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Commission 
+                    percentage 0 to 100. If you do not want to offer a percentage 
+                    commission, set this to 0. Example:-<br>
+                    &quot;20&quot; </font></p></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$flatrate</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Payment 
+                  per flat sale, 10 for $10. If you do not want to offer a flat 
+                  percentage then set this to 0. Example:-<br>
+                  &quot;10&quot; </font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$minimumpay</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+                  minimum commissions a webmaster must have to be included in 
+                  a pay period. Example:-<br>
+                  &quot;50&quot; </font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$commissionperiod</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is the lifetime of the tracking cookie in days. Example:-<br>
+                  &quot;30&quot; </font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$data_path</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+                  sub-folder in which data will be stored. This must be writeable. 
+                  Default:-<br>
+                  &quot;data&quot; </font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$payday_path</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+                  sub-folder in which PayDay CSV files will be stored. Default:-<br>
+                  &quot;payday&quot; </font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$requiredjoinfields</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+                  List of required join fields, separated by ','. Default:-<br>
+                  &quot;name,address1,city,area,postcode,country,website,email,username,password&quot;</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$wipeold</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Set 
+                  to 1 to wipe old payperiod data 0 to keep all data. When set 
+                  to 1 data for this payperiod and the last payperiod will be 
+                  kept, older data will be removed. Default:-<br>
+                  1 </font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$yearstart</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Set 
+                  to the year this affiliate program was started. Example:-<br>
+                  &quot;2004&quot; </font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$sessiontimeout</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Time 
+                  in minutes that a login session can last before timeout. This 
+                  applies to both the affiliate area and your management area. 
+                  Default:-<br>
+                  &quot;10&quot; </font></td>
+              </tr>
+              <tr bgcolor="#D2EBFF"> 
+                <td colspan="2"> <div align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Tracking 
+                    Details</strong></font></div></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$poststyle<br>
+                  <br>
+                  <br>
+                  </font></td>
+                <td> <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">0 
+                    for GET, 1 for POST. If you're integrating using the 1x1 img 
+                    tag tracking method this must be set to 0 for GET. You can 
+                    then ignore the next 3 variables. If you are integrating with 
+                    a POST back, then you must set the next 3 variables.<br>
+                    Default:-<br>
+                    &quot;0&quot; </font></p></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$postprice</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Name 
+                  of the post variable that contains the amount of the order. 
+                  Example:-<br>
+                  &quot;amount&quot; </font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$postid</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Name 
+                  of the post variable that contains the unique order ID. Example:-<br>
+                  &quot;id&quot; </font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$postsent</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Name 
+                  of the post variable that contains the unique sales tracking 
+                  password. Example:-<br>
+                  &quot;enc&quot; </font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$postredirec</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+                  thank you page to redirect to after a sale POST has been received. 
+                  This is a URL. Example:-<br>
+                  &quot;http://www.yourdomain.com/thankyou.html&quot;</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$saletrackpassword</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Unique 
+                  sales tracking password for improved security. This must be 
+                  a unique number that you should update regularly. To disable 
+                  this feature set this variable to empty &quot;&quot;. Example:-<br>
+                  &quot;SFJfhj36&quot; </font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$policyurl</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is the URL to your compact privacy policy. This file is made 
+                  in the next section, if you already have one you need to adapt 
+                  your p3p.xml file so that it uses the affiliate tracking policy 
+                  for your affiliate script folder. This is described later in 
+                  the template editing section. Example:-<br>
+                  &quot;http://www.yourdomain.com/w3c/p3p.xml&quot; </font></td>
+              </tr>
+              <tr bgcolor="#D2EBFF"> 
+                <td colspan="2"> <div align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Message 
+                    Variables</strong></font></div></td>
+              </tr>
+              <tr bgcolor="#E6F1FF"> 
+                <td colspan="2"> <div align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+                    following is the message that will be sent to you with the 
+                    updated affiliate information</font></div></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+                  $mailhostupdatesubject</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Message 
+                  Subject. Example:-<br>
+                  &quot;Affiliate info updated&quot;</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$mailhostupdate</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Message 
+                  Body. Example:-<br>
+                  &quot;An affiliate has updated their info in your affiliate 
+                  program.<br>
+                  His details have been listed below\n\n&quot;</font></td>
+              </tr>
+              <tr bgcolor="#E6F1FF"> 
+                <td colspan="2"> <div align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+                    following is the message that will be sent to the affiliate 
+                    with his updated user information<br>
+                    (This version includes the location of your stats login page, 
+                    and how to link page.)</font></div></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+                  $mailuserupdatesubject</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Message 
+                  Subject. Example:-<br>
+                  &quot;Your updated Affiliate Info&quot;</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$mailuserupdate</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Message 
+                  Body. Example:-<br>
+                  &quot;Updated info for our Affiliate program.<br>
+                  For information on how to link to us go to this URL<br>
+                  http://www.yourdomain.com/affiliate/yourhowtolinkpage.html<br>
+                  To view your stats go to this URL<br>
+                  http://www.yourdomain.com/affiliate/yourstatslogin.html </font><font size="2"> 
+                  <p><font face="Verdana, Arial, Helvetica, sans-serif">The details 
+                    in which you updated are listed below\n&quot;</font></p>
+                  </font></td>
+              </tr>
+              <tr bgcolor="#E6F1FF"> 
+                <td colspan="2"> <div align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+                    following is the message that will be sent to you with the 
+                    amount owed to the webmaster</font></div></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+                  $mailhostpaydaysubject</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+                  Message Subject. Example:-<br>
+                  &quot;Affiliate PayDay&quot;</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$mailhostpayday</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Message 
+                  Body. Example:-<br>
+                  &quot;Affiliate pay due\n\n&quot;</font></td>
+              </tr>
+              <tr bgcolor="#E6F1FF"> 
+                <td colspan="2"> <div align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+                    following is the message that will be sent to the user with 
+                    his pay message</font></div></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+                  $mailuserpaydaysubject</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Message 
+                  Subject. Example:-<br>
+                  &quot;Affiliate PayDay&quot;</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$mailuserpayday</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Message 
+                  Body. Example:-<br>
+                  &quot;You have earned the following pay this period\n\n</font></td>
+              </tr>
+              <tr bgcolor="#E6F1FF"> 
+                <td colspan="2"> <div align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+                    following is the message that will be sent to you when a new 
+                    affiliate signs up with the user information</font></div></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+                  $mailhostjoinsubject</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&quot;A 
+                  new Affiliate has joined&quot;</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$mailhostjoin</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&quot;An 
+                  affiliate has applied to your affiliate program.<br>
+                  His details have been listed below\n\n&quot;</font></td>
+              </tr>
+              <tr bgcolor="#E6F1FF"> 
+                <td colspan="2"> <div align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+                    following is the message that will be sent to the applying 
+                    affiliate with his user information.<br>
+                    (This version includes the location of your stats login page, 
+                    and how to link page.)</font></div></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td> <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$mailuserjoinsubject</font></p></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&quot;Thanks 
+                  for joining&quot;</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">$mailuserjoin</font></td>
+                <td> <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&quot;Welcome 
+                    to our affiliate program.<br>
+                    For information on how to link to us go to this URL<br>
+                    http://www.yourdomain.com/affiliate/yourhowtolinkpage.html<br>
+                    To view your stats go to this URL<br>
+                    http://www.yourdomain.com/affiliate/yourstatslogin.html</font></p>
+                  <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">IMPORTANT: 
+                    A warning to cheaters, this software is<br>
+                    designed to catch cheaters in many ways,<br>
+                    SO BE WARNED</font></p>
+                  <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+                    details in which you signed up with are listed below<br>
+                    To change or update your details go to the stats page\n\n&quot;</font></p></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">All files 
+        from the zip file bar join.html, index.html, p3p.xml, policy.p3p, privacypolicy.html 
+        and login.html should be uploaded into a sub-folder of your cgi-bin (we 
+        recommend a folder named 'affiliate').<br>
+        ALL FILES, BAR ANY PICTURE FILES, SHOULD BE UPLOADED IN ASCII.<br>
+        You also need to create the data folder and the payday folder, such as 
+        'data' and 'payday'.<br>
+        The files join.html, index.html, policy.p3p, privacypolicy.html and login.html 
+        need to be uploaded to a folder of your choice <strong>outside</strong> 
+        your cgi-bin (we recommend a folder named 'affiliate'). This is because 
+        .html files cannot be viewed inside the cgi-bin. The other .html files 
+        must stay in the cgi-bin as they are displayed in through the scripts. 
+        The file p3p.xml must be uploaded to a folder named 'w3c', such as 'www.yourdomain.com/w3c/p3p.xml'. 
+        If you already have a p3p.xml file, then it must be modified as directed 
+        the the template editing section below.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The table 
+        below shows what chmod (Unix) each file should be given.</font></p>
+      <table width="200" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"><table width="200" border="0" cellpadding="2" cellspacing="1">
+              <tr> 
+                <td bgcolor="#D2EBFF"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Filename</font></td>
+                <td bgcolor="#D2EBFF"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">chmod</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">admingen.cgi</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">755</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">adminpass.txt</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">777</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">affiliate.cgi</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">755</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">affiliate2.cgi</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">755</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">cosmic.pm</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">755</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">error.log</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">777</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">join.cgi</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">755</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">manager.cgi</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">755</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">sendmail.pm</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">755</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">stato.cgi</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">755</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">variables.var</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">444</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">'data'</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">777</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">'payday'</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">777</font></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> The table 
+        below shows what file permissions (Win32) each file should be given.</font></p>
+      <table width="280" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"><table width="280" border="0" cellspacing="1" cellpadding="2">
+              <tr> 
+                <td bgcolor="#D2EBFF"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Filename</font></td>
+                <td bgcolor="#D2EBFF"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">chmod</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">admingen.cgi</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">read 
+                  write execute</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">adminpass.txt</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">read 
+                  write execute delete</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">affiliate.cgi</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">read 
+                  write execute</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">affiliate2.cgi</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">read 
+                  write execute</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">cosmic.pm</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">read 
+                  write execute</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">error.log</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">read 
+                  write execute delete</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">join.cgi</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">read 
+                  write execute</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">manager.cgi</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">read 
+                  write execute</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">sendmail.pm</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">read 
+                  write execute</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">stato.cgi</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">read 
+                  write execute</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">variables.var</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">read</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">'data'</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">read 
+                  write execute delete</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">'payday'</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">read 
+                  write execute delete</font></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> <strong>3. 
+        Template editing</strong></font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">You 
+        can edit the template files using a WYSIWYG HTML editor such as DreamWeaver 
+        or AceExpert. You can also edit this file as Raw HTML using a text editor. 
+        NOTE:- FrontPage and other editors change the layout of the HTML, this 
+        causes serious problems with templates. If you are using FrontPage then 
+        please edit Raw HTML.</font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">About 
+        the <b>::symbols::</b></font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+        symbols such as ::name:: and ::company:: are very important. Our software 
+        replaces these symbols with data relating to the customer inquiry. When 
+        editing the template do <b>NOT</b> remove these symbols.</font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">TIP:- 
+        It is often best to try out this program first with the default templates. 
+        This should give you a better idea of where the templates are displayed 
+        when you are editing them. </font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Below 
+        is a list of the templates, their symbols with what they represent and 
+        other parts that need changing.</font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>INDEX.HTML 
+        - This is the template used for your affiliate main page where they can 
+        join or login.</strong><br>
+        You will need to create the tandc.html page for your terms and conditions 
+        for your affiliate program. You will also need to give a brief explanation 
+        of how your affiliate program works and what commissions you offer.</font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>JOIN.HTML 
+        - This is the template used for your affiliates signup form.</strong><br>
+        You will need to adjust the FORM action to point to the location of join.cgi 
+        in your 'cgi-bin'. This looks like:-<br>
+        &lt;form action=&quot;join.cgi?want=stage1&quot; method=&quot;POST&quot;&gt;<br>
+        And will need to be changed to something like:-<br>
+        &lt;form action=&quot;/cgi-bin/affiliate/join.cgi?want=stage1&quot; method=&quot;POST&quot;&gt; 
+        <br>
+        Depending on where you have installed the scripts.</font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">You 
+        may also want to remove one of the commission type options if you are 
+        offering only a commission or only a flat program. You MUST NOT remove 
+        the type field completely. You may replace the selection box with a hidden 
+        field such as:-<br>
+        &lt;input type=&quot;hidden&quot; name=&quot;type&quot; value=&quot;comm&quot;&gt;</font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">You 
+        may want to use the extra fields. You can use any of these 4 fields to 
+        collect the extra information you require. Simply change the HTML text 
+        next to the extra field input box. The name of the text box must remain 
+        as extrafield1, etc.</font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">There 
+        are no symbols in this page.</font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>JOINUP.HTML 
+        - This is the template used for your affiliates signup confirmation form.</strong><br>
+        You will need to adjust the FORM action to point to the location of join.cgi 
+        in your 'cgi-bin'. This looks like:-<br>
+        &lt;form action=&quot;join.cgi?want=stage1&quot; method=&quot;POST&quot;&gt;<br>
+        And will need to be changed to something like:-<br>
+        &lt;form action=&quot;/cgi-bin/affiliate/join.cgi?want=stage1&quot; method=&quot;POST&quot;&gt; 
+        <br>
+        Depending on where you have installed the scripts.</font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">You 
+        MUST NOT remove the hidden type field. This field looks like:-<br>
+        &lt;input type=&quot;hidden&quot; name=&quot;type&quot; value=&quot;::type::&quot;&gt;</font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+        symbols in this page are:-</font></p>
+      <table width="750" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td bgcolor="#000000"><table width="100%" border="0" cellspacing="1" cellpadding="4">
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::name::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates name</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::company::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates company name</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::payee::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates payee name</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::address1::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates address line 1</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::address2::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates address line 2</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::city::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates city address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::area::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates area address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::postcode::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates postcode address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::country::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates country address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::website::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates website URL</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::email::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates email address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::ssn::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates SSN</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::username::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen username</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::password::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen password</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::type::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen payment type in code form 
+                  ('comm' or 'flat')</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::paypal::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates paypal email address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield1::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 1</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield2::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 2</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield3::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 3</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield4::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 4</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::typer::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen payment type in words 
+                  (for display to affiliate)</font></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>JOINUP2.HTML 
+        - This is the template used for your affiliates signup complete page.</strong><br>
+        You will need to adjust the 'Statistics Area' link so that it points to 
+        your login.html page outside your cgi-bin. The HTML code is:-<br>
+        &lt;a href=&quot;login.html&quot;&gt;Statistics Area&lt;/a&gt;<br>
+        And will need to be changed to something like:-<br>
+        &lt;a href=&quot;/affiliate/login.html&quot;&gt;Statistics Area&lt;/a&gt;<br>
+        Depending on where you have installed the scripts.</font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+        symbols in this page are:-</font></p>
+      <table width="750" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"><table width="100%" border="0" cellspacing="1" cellpadding="4">
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::name::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates name</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::company::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates company name</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::payee::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates payee name</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::address1::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates address line 1</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::address2::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates address line 2</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::city::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates city address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::area::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates area address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::postcode::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates postcode address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::country::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates country address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::website::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates website URL</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::email::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates email address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::ssn::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates SSN</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::username::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen username</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::password::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen password</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::type::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen payment type in code form 
+                  ('comm' or 'flat')</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::paypal::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates paypal email address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield1::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 1</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield2::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 2</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield3::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 3</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield4::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 4</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::typer::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen payment type in words 
+                  (for display to affiliate)</font></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>LOGIN.HTML 
+        - This is the template used for your affiliates login form.</strong><br>
+        You will need to adjust the FORM action to point to the location of stato.cgi 
+        in your 'cgi-bin'. This looks like:-<br>
+        &lt;form action=&quot;stato.cgi?want=enteradmin&quot; method=&quot;POST&quot;&gt;<br>
+        And will need to be changed to something like:-<br>
+        &lt;form action=&quot;/cgi-bin/affiliate/stato.cgi?want=enteradmin&quot; 
+        method=&quot;POST&quot;&gt; <br>
+        Depending on where you have installed the scripts.</font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>MENU.HTML 
+        - This is the template used for your affiliates management area page.</strong><br>
+        You only need to adjust the look and feel of this page. If you are promoting 
+        multiple sites you can do so by adding &amp;site=site2, etc, to the end 
+        of the affiliate link code. </font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+        symbols in this page are:-</font></p>
+      <table width="750" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"><table width="100%" border="0" cellspacing="1" cellpadding="4">
+              <tr bgcolor="#FFFFFF"> 
+                <td bgcolor="#FFFFFF"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::paydue::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates current commissions</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::session::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates current session ID</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::programurl::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the URL to your affiliate program script folder</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::username::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates username</font></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>STATSPAGE.HTML 
+        - This is the template used for your affiliates management area stats 
+        page.</strong><br>
+        You only need to adjust the look and feel of this page. If you are only 
+        offering percentage commission or only offering flat rate you can remove 
+        the code for either details display.</font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+        symbols in this page are:-</font></p>
+      <table width="750" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"><table width="100%" border="0" cellspacing="1" cellpadding="4">
+              <tr bgcolor="#FFFFFF"> 
+                <td bgcolor="#FFFFFF"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::paydue::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates current commissions</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::stats::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the stats display type</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::totalsales::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the total number of sales</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::salevalue::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the total value of the sales processed</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::commissionp::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the commission rate you are offering</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::flatrate::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the flat rate per sale that you are offering</font></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>UPDATEPAGE.HTML 
+        - This is the template used for your affiliates update info page.</strong><br>
+        You may also want to remove the change type options if you are offering 
+        only a commission or only a flat program. You MUST NOT remove the hidden 
+        type field.</font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">You 
+        may want to use the extra fields. You can use any of these 4 fields to 
+        collect the extra information you require. Simply change the HTML text 
+        next to the extra field input box. The name of the text box must remain 
+        as extrafield1, etc.</font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+        symbols in this page are:-</font></p>
+      <table width="750" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"><table width="100%" border="0" cellspacing="1" cellpadding="4">
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::name::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates name</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::company::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates company name</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::payee::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates payee name</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::address1::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates address line 1</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::address2::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates address line 2</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::city::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates city address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::area::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates area address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::postcode::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates postcode address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::country::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates country address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::website::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates website URL</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::email::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates email address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::ssn::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates SSN</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::username::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen username</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::password::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen password</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::type::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen payment type in code form 
+                  ('comm' or 'flat')</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::paypal::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates paypal email address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield1::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 1</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield2::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 2</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield3::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 3</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield4::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 4</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::typer::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen payment type in words 
+                  (for display to affiliate)</font></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>UPDATEDONEPAGE.HTML 
+        - This is the template used for your affiliates update info complete page.</strong></font></p>
+      <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+        symbols in this page are:-</font></p>
+      <table width="750" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"><table width="100%" border="0" cellspacing="1" cellpadding="4">
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::name::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates name</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::company::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates company name</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::payee::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates payee name</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::address1::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates address line 1</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::address2::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates address line 2</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::city::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates city address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::area::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates area address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::postcode::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates postcode address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::country::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates country address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::website::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates website URL</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::email::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates email address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::ssn::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates SSN</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::username::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen username</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::password::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen password</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::type::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen payment type in code form 
+                  ('comm' or 'flat')</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::paypal::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates paypal email address</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield1::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 1</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield2::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 2</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield3::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 3</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::extrafield4::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the input affiliates extra field 4</font></td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">::typer::</font></td>
+                <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">This 
+                  is replaced for the affiliates chosen payment type in words 
+                  (for display to affiliate)</font></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>P3P.XML 
+        - This is the xml file used to direct to your compact privacy policy.</strong><br>
+        You need to adjust the POLICY-REF to point to the compact privacy policy 
+        on your server.<br>
+        &lt;POLICY-REF about=&quot;http://www.cosmicperl.com/ace/cgi-bin/policy.p3p#AffiliateClickCookieTracking&quot;&gt;<br>
+        And will need to be changed to something like:-<br>
+        &lt;POLICY-REF about=&quot;http://www.yourserver.com/affiliate/policy.p3p#AffiliateClickCookieTracking&quot;&gt;<br>
+        Depending on where you uploaded the policy file.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">If you already 
+        have a p3p.xml policy reference file, then you need to update it to include 
+        this new policy for the affiliate tracking folder. An example of a reference 
+        file pointing to multiple policies is:-<br>
+        <font size="1">&lt;META xmlns=&quot;http://www.w3.org/2002/01/P3Pv1&quot;&gt;<br>
+        &lt;POLICY-REFERENCES&gt;<br>
+        &nbsp;&nbsp;&lt;POLICY-REF about=&quot;http://www.yourdomain.com/privacy/mainpolicy.p3p#MainPrivacyPolicy&quot;&gt;<br>
+        &nbsp;&nbsp;&lt;INCLUDE&gt;/&lt;/INCLUDE&gt;<br>
+        &nbsp;&nbsp;&lt;EXCLUDE&gt;/cgi-bin/affiliate&lt;/EXCLUDE&gt;<br>
+        &nbsp;&nbsp;&lt;COOKIE-INCLUDE/&gt;<br>
+        &lt;/POLICY-REF&gt;</font></font><font size="1"><br>
+        <font face="Verdana, Arial, Helvetica, sans-serif">&lt;POLICY-REF about=&quot;http://www.yourdomain.com/affiliate/policy.p3p#AffiliateClickCookieTracking&quot;&gt;<br>
+        &nbsp;&nbsp;&lt;INCLUDE&gt;/cgi-bin/affiliate&lt;/INCLUDE&gt;<br>
+        &nbsp;&nbsp;&lt;COOKIE-INCLUDE/&gt;<br>
+        &lt;/POLICY-REF&gt;<br>
+        </font></font><font size="1" face="Verdana, Arial, Helvetica, sans-serif">&lt;/POLICY-REFERENCES&gt;<br>
+        &lt;/META&gt;</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>POLICY.P3P 
+        - This is the compact privacy policy.</strong><br>
+        You need to adjust the discuri to point to the privacy policy html file 
+        on your server.<br>
+        discuri=&quot;http://www.cosmicperl.com/ace/cgi-bin/privacypolicy.html&quot;<br>
+        And will need to be changed to something like:-<br>
+        discuri=&quot;http://www.yourserver.com/affiliate/privacypolicy.html&quot;<br>
+        Depending on where you uploaded the policy html file.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>PRIVACYPOLICY.HTML 
+        - This is the privacy policy html file.</strong><br>
+        There is no real need to edit this file. If you do so be careful not to 
+        corrupt the information it contains.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Everything 
+        should now be setup and ready to go. You just need to integrate to track 
+        sales and test the system.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>4. 
+        Integration</strong><br>
+        <br>
+        There are 2 methods of integration. These methods work with different 
+        credit card processors and systems. These methods are based on GET being 
+        used with a 1x1 img tag and POST being used with post back.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> Most systems 
+        use the GET method. This involves adding a 1x1 img tag to your order complete 
+        or thankyou page. Such as:-<br>
+        &lt;img src=&quot;http://www.yourdomain.com/cgi-bin/affiliate/affiliate2.cgi?id=ORDERID&amp;amount=ORDERAMOUNT&amp;enc=SALETRACKPASSWORD&quot; 
+        height=1 width=1 border=0&gt;<br>
+        ORDERID must be swapped for your shopping carts or card processors order 
+        id symbol that will be swapped for the actual value when a sale goes through. 
+        ORDERAMOUNT must be swapped for your shopping carts or card processors 
+        order amount symbol that will be swapped for the actual value when a sale 
+        goes through. SALETRACKPASSWORD must be swapped for the value of your 
+        $saletrackpassword variable.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> Some systems 
+        use the POST method. This is where your card processor or shopping cart 
+        posts back to a script on your server after a sale. This post includes 
+        information such as the order ID and amount. To use the sales tracking 
+        password feature you will need to use a passthrough variable with your 
+        cart/processors post back system. You must set the $postprice, $postid 
+        and $postsent variables to the names of the associated post back fields. 
+        If $postsent is empty the password will be picked up from the query string 
+        &amp;enc=.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">We have started 
+        a page where people can list the integration methods for the various card 
+        processors and shopping carts. You can post a request in the bbs there, 
+        and contribute your own findings. Visit:-<br>
+        <a href="http://www.cosmicperl.com/support/affiliateintegration.html">http://www.cosmicperl.com/support/affiliateintegration.html</a></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>Secure 
+        tracking notes</strong>:- Some times secure tracking is required. This 
+        involves setting up click.cgi and click2.cgi on a secure server along 
+        with the securedomain.com/w3c/p3p.xml compact privacy policy file and 
+        cosmic.pm. If you do not have access to a secure server, or have access 
+        to one that is not willing to upload p3p.xml to the /w3c folder then we 
+        can provide you with a secure installation of click.cgi and click2.cgi 
+        from cosmicsecure.com. Contact us for details.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>5. 
+        Testing the system is working</strong><br>
+        <br>
+        You <strong>MUST</strong> check that the cookies are being set properly 
+        and the sales are being recorded before you launch your program. Failure 
+        to do so will be a breach of the terms of use and may well result in legal 
+        action against you.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">For the management 
+        area to be available and for the password encryption to work properly 
+        you must first run admingen.cgi. This will automatically test your servers 
+        encryption type and set your password.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">First check 
+        the signup is working by following through the join forms. Then login 
+        as the affiliate and test the affiliate link. After following the affiliate 
+        link, check your cookies to see that the cookie named AFFILIATE has been 
+        set for your domain. Then proceed to place an order. Log back in as the 
+        affiliate and check your stats. If the sales was recorded and commission 
+        rewarded you are good to go. Otherwise check the file error.log. This 
+        file contains any errors recorded by affiliate2.cgi, if no errors have 
+        been recorded then the tracking script has not been called so your integration 
+        must be checked. This may well mean the URL to affiliate2.cgi is wrong. 
+        The errors in the error.log should direct you to where the problem lies 
+        so that you may fix it.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>6. 
+        Trouble shooting</strong><br>
+        <br>
+        As this script is free we do not offer free support on this product. You 
+        may purchase support, installation or integration from us on our site. 
+        We also provide a free support forum where you may be able to get the 
+        help you need fro other AffiliateClick users.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> <strong>7. 
+        BUG report</strong><br>
+        <br>
+        If you find any bugs, glitches or problems then please contact me at:<br>
+        <br>
+        <a href="mailto:bugs@cosmicperl.com?subject=AffiliateClick%20bug%20report">bugs@cosmicperl.com</a> 
+        <br>
+        <br>
+        with the subject &quot;AffiliateClick bug report&quot;.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> <strong>8. 
+        Getting rid of the 'CosmicPerl.com', 'AllAffiliatePro.com' and 'CosmicScripts.com' 
+        links</strong><br>
+        <br>
+        On some of the pages there are mandatory links to our sites. Keeping these 
+        links is a part of the terms of use of this software package. Removal 
+        of these links is illegal. If you want an unbranded affiliate program 
+        with many more features and functionality then upgrade to AllAffiliatePro 
+        available at <a href="http://www.AllAffiliatePro.com">AllAffiliatePro.com</a></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> <strong>9. 
+        Using this script</strong><br>
+        <br>
+        Link to the index.html page so that affiliates can join and login. To 
+        access the management area run manager.cgi?want=admin. To do this you 
+        will first need to run admingen.cgi to generate your username and password. 
+        From the management area you can run reports on affiliate earnings, edit 
+        affiliate info, remove affiliates, check affiliate orders, remove orders, 
+        email your affiliates and generate a payperiod. You can also update your 
+        login password.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">When running 
+        your affiliate program you must ensure you are tracking sales correctly. 
+        When it comes time to generate a pay period do a backup of the data folder 
+        first. Generate a pay period ONLY after the month has ended. Pay periods 
+        are generated up to, but not including the current month. Make sure you 
+        pay your affiliates in a timely manner. Before generating any pay period 
+        always check the tracked order id's to make sure no fraudulent orders 
+        have been put through.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">If you want 
+        new features and functionality, and want to upgrade to a fully fledged 
+        affiliate program with all the power, bells and whistles then visit <a href="http://www.allaffiliatepro.com">allaffiliatepro.com</a></font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Good luck 
+        with your affiliate program! Check our sites for more free scripts, commercial 
+        scripts, and useful webmaster tools and advice.</font></p>
+      <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="http://www.cosmicscripts.com">Free 
+        cgi scripts</a> at CosmicScripts.com<br>
+        <a href="http://www.cosmicperl.com">Cgi scripts</a> at CosmicPerl.com<br>
+        <a href="http://www.allaffiliatepro.com">Affiliate software</a> at AllAffiliatePro.com</font><br>
+      </p>
+      <p align="center"><font size="1" face="verdana,arial,helvetica,tahoma">AffiliateClick 
+        powered by <a href="http://www.cosmicperl.com">CosmicPerl.com</a></font><br>
+        <font size="1" face="verdana,arial,helvetica,tahoma"><a href="http://www.allaffiliatepro.com">affiliate 
+        software</a> from the makers of AllAffiliatePro<br>
+        <a href="http://www.cosmicscripts.com">free cgi scripts</a> from CosmicScripts.com<br>
+        <a href="http://www.cosmicperl.com">cgi scripts</a> from CosmicPerl.com</font></p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

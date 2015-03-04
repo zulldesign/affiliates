@@ -1,0 +1,95 @@
+
+##############
+############## Program variables
+##############
+
+
+$programurl = "http://www.cosmicperl.com/ace/cgi-bin"; ## The folder where you put the files
+$statsloginurl = "http://www.cosmicperl.com/ace/affiliate/login.html"; ## The URL to your login page
+$companyname = "CosmicPerl"; ## This should be your companyname
+$recipient = 'webmaster@cosmicperl.com'; ## Your e-mail
+$mailprog = '/usr/lib/sendmail'; ## Change this to your sendmail path
+$site1 = "http://www.cosmicperl.com"; ## The website you are advertising
+$site2 = "http://www.allaffiliatepro.com"; ## The website you are advertising
+$site3 = "http://www.cosmicscripts.com"; ## The website you are advertising
+$site4 = "http://www.cosmicnetwork.com"; ## The website you are advertising
+$site5 = "http://www.cosmicsearch.com"; ## The website you are advertising
+$currency = '$'; ## Input your local currency symbol to use in the program
+$commission = "20"; ## Commission percentage 0 to 100
+$flatrate = "10"; ## payment $ per flat sale
+$minimumpay = 50; ## The smallest amount to pay a webmaster
+$commissionperiod = "30"; ## This is the lifetime of the cookie in days
+$data_path = "data"; ## The sub-folder in which data will be stored
+$payday_path = "payday"; ## The sub-folder in which PayDay CSV files will be stored
+$requiredjoinfields = "name,address1,city,area,postcode,country,website,email,username,password"; ## List of require join fields, separated by ','
+$wipeold = 1; ## Set to 1 to wipe old payperiod data 0 to keep all data
+$yearstart = "2004"; ## Set to the year this affiliate program was started
+$sessiontimeout = "10"; ## Time in minutes that a session can last before timeout
+$poststyle = "0"; ## 0 for GET, 1 for POST
+$postprice = "price"; ## Name of the post variable that contains amount ($) ordered
+$postid = "id"; ## Name of the post variable that contains the unique order ID
+$postsent = "sent"; ## Name of the post variable that contains the sale tracking passsword
+$postredirect = ""; ## The thank you page to redirect to after a sale POST has been received
+$saletrackpassword = "SFJfhj36"; ## Unique sales tracking password for improved security. Set to empty to disable
+$policyurl = "http://www.cosmicperl.com/w3c/p3p.xml"; ## This is the URL to your compact privacy policy
+$securetracking = 0; ## Set to 1 to enable secure cookie tracking with click.cgi and click2.cgi
+$secureurl = "https://www.cosmicsecure.com/cgi-bin/ac"; ## This is the secure (https://) URL to where click.cgi and click2.cgi is installed. No trailing slash
+
+
+##############
+############## Message variables
+##############
+
+
+## The following is the message that will be sent to you with the updated affiliate information
+$mailhostupdatesubject = "Affiliate info updated";
+$mailhostupdate = "An affiliate has updated their info in your affiliate program.
+His details have been listed below\n\n";
+
+## The following is the message that will be sent to the affiliate
+## with his updated user information note:(This version includes the wareabouts of 
+## your stats page, and how to link page.
+$mailuserupdatesubject = "Your updated Affiliate Info";
+$mailuserupdate = "Updated info for our Affiliate program.
+For information on how to link to us go to this URL
+http://www.yourdomain.com/yourhowtolinkpage.html
+To view your stats go to this URL
+http://www.yourdomain.com/yourstatslogin.html
+
+The details in which you updated are listed below\n";
+
+## The following is the message that will be sent to you with the amount owed to the webmaster
+$mailhostpaydaysubject = "Affiliate PayDay";
+$mailhostpayday = "Affiliate pay due\n\n";
+
+## The following is the message that will be sent to the user with his pay message
+$mailuserpaydaysubject = "Affiliate PayDay";
+$mailuserpayday = "You have earned the following pay this period\n\n";
+
+## The following is the message that will be sent to you when a new affiliate signs up with the user information
+$mailhostjoinsubject = "A new Affiliate has joined";
+$mailhostjoin = "An affiliate has applied to your affiliate program.
+His details have been listed below\n\n";
+
+## The following is the message that will be sent to the applying webmaster
+## with his user information note:(This version includes the wareabouts of
+## your stats page, and how to link page.
+
+$mailuserjoinsubject = "Thanks for joining";
+$mailuserjoin = "Welcome to our affiliate program.
+For information on how to link to us go to this URL
+http://www.yourdomain.com/yourhowtolinkpage.html
+To view your stats go to this URL
+http://www.yourdomain.com/yourstatslogin.html
+
+IMPORTANT: A warning to cheaters, this software is
+designed to catch cheaters in many ways,
+SO BE WARNED
+
+The details in which you signed up with are listed below
+To change or update your details go to the stats page\n\n";
+
+
+
+1;
+
